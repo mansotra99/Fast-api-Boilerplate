@@ -1,4 +1,3 @@
-
 import os,uvicorn
 from fastapi import APIRouter, FastAPI
 from fastapi.responses import JSONResponse,PlainTextResponse
@@ -13,12 +12,9 @@ from middleware.middleware import *
 
 from routers.demo.demo import demoRoute
 
-
 from utils.invalid_response_class import InternalServerError
 from utils.response_manipulator import CustomResponse
 from utils.logging import init_logging
-
-
 
 if os.getenv('ENVIRONMENT')=="PRODUCTION" or os.getenv('ENVIRONMENT')=="STAGING":
 
@@ -33,14 +29,8 @@ if os.getenv('ENVIRONMENT')=="PRODUCTION" or os.getenv('ENVIRONMENT')=="STAGING"
         environment=str(os.getenv("ENVIRONMENT"))
     )
 
-
 app = FastAPI()
 app.add_middleware(SentryAsgiMiddleware)
-
-
-
-
- 
 
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 app.include_router(demoRoute, prefix='/api/fv1/demo', tags=["Demo"],dependencies=[Depends(create_request_id)])
@@ -58,16 +48,11 @@ async def handle_error(request: Request, exc: RequestValidationError):
 async def internal_server_error(request: Request, exc: InternalServerError):
     return CustomResponse(status_code=400,message="Some Error Occured",request=request).customResp()
 
-
 init_logging()
-
-
-
 
 @app.get('/ping', tags=['system'])
 async def ping():
     return {'ok': 'ok'}
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="0.0.0.0", port=7000,reload=True,workers=4)
