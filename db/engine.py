@@ -54,7 +54,6 @@ class DbExecute(object):
     def del_engine(self):
         del self.engine
 
-    
     def fetchall(self,query,valuelist):
         result=db.execute(text(query),valuelist)
         self.del_engine()
