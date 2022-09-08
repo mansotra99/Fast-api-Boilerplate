@@ -1,5 +1,7 @@
 ### **Fast-api-Boilerplate**
 
+FastAPI framework, high performance, easy to learn, fast to code, ready for production
+
 ## ENVIRONMENT
 For each Type of environment Create a respective file and pass those variables in start.sh file 
 
@@ -22,5 +24,29 @@ Although using SQLAlchemy but that is just to create connection, Can implement m
 
 To run just use command "**bash start.sh**"  on linux need to configure for other OS.
 
-# Created Reponse, Logging 
+Created Reponse, Logging Common Structure
+Added request_id(Can also be passed from Nginx Server) which can be helpful for debugging
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks to https://github.com/tiangolo/fastapi
+https://fastapi.tiangolo.com
