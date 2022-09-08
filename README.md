@@ -13,11 +13,14 @@ For each Type of environment Create a respective file and pass those variables i
 
 ## Database Connection
 
-Add db host, password, user, database in env file 
+Add db_host, db_password, db_user, db_name , db_port in env file.
+
+Although using SQLAlchemy but that is just to create connection, Can implement models with respect to your needs
 
 
+## TO RUN PROJECT
 
-# To run just use command "bash start.sh"  on linux need to configure for other OS.
-# Although using SQLAlchemy but that is just to create connection, 
+To run just use command "**bash start.sh**"  on linux need to configure for other OS.
+
 # Created Reponse, Logging 
-# Create 
+
