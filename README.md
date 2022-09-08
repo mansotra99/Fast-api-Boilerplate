@@ -2,6 +2,7 @@
 
 ## ENVIRONMENT
 For each Type of environment Create a respective file and pass those variables in start.sh file 
+
 Key : ENVIRONMENT
 Value : [PRODUCTION,STAGING,DEVELOPMENT]  (Any One)
 File : [.env.production, .env.staging, .env.development] (Respective to Value)
