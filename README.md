@@ -3,7 +3,7 @@
 FastAPI framework, high performance, easy to learn, fast to code, ready for production
 
 ## ENVIRONMENT
-For each Type of environment Create a respective file and pass those variables in start.sh file 
+For each Type of environment Create a respective file and pass those variables in **start.sh** file 
 
 **Key** : ENVIRONMENT
 
