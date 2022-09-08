@@ -1,4 +1,4 @@
-### Fast-api-Boilerplate
+### **Fast-api-Boilerplate**
 
 ## ENVIRONMENT
 For each Type of environment Create a respective file and pass those variables in start.sh file 
@@ -11,7 +11,9 @@ For each Type of environment Create a respective file and pass those variables i
 
 
 
-## Database Connection. 
+## Database Connection
+
+Add db host, password, user, database in env file 
 
 
 
