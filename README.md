@@ -3,7 +3,7 @@
 FastAPI framework, high performance, easy to learn, fast to code, ready for production
 
 ## ENVIRONMENT
-For each Type of environment Create a respective file and pass those variables in start.sh file 
+For each Type of environment Create a respective file and pass those variables in **start.sh** file 
 
 **Key** : ENVIRONMENT
 
@@ -17,7 +17,7 @@ For each Type of environment Create a respective file and pass those variables i
 
 Add db_host, db_password, db_user, db_name , db_port in env file.
 
-Although using SQLAlchemy but that is just to create connection, Can implement models with respect to your needs
+Although using SQLAlchemy but that is just to create connection, Can implement models with respect to your needs.
 
 
 ## TO RUN PROJECT
@@ -31,23 +31,8 @@ Added request_id(Can also be passed from Nginx Server) which can be helpful for 
 
 
 
+## CONTRIBUTION
+Still Learning,
 
+So feel free, Anything You wanna contirubute.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Thanks to https://github.com/tiangolo/fastapi
-
-https://fastapi.tiangolo.com
