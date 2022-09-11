@@ -1,6 +1,5 @@
 
-import os
-import newrelic.agent
+import os,uvicorn
 from fastapi import APIRouter, FastAPI
 from fastapi.responses import JSONResponse,PlainTextResponse
 from db.engine import db
@@ -44,7 +43,7 @@ app.add_middleware(SentryAsgiMiddleware)
  
 
 app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
-app.include_router(demoRoute, prefix='/api/fv1/process', tags=["sku processing for web"],dependencies=[Depends(create_request_id),Depends(authenticate_user)])
+app.include_router(demoRoute, prefix='/api/fv1/demo', tags=["Demo"],dependencies=[Depends(create_request_id)])
 
 @app.exception_handler(InvalidationException)
 async def invalidation_exception_handler(request: Request, exc: InvalidationException):
@@ -70,5 +69,5 @@ async def ping():
     return {'ok': 'ok'}
 
 
-# if __name__ == "__main__":
-#     uvicorn.run(app, host="0.0.0.0", port=8000,workers=4)
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=7000,reload=True,workers=4)

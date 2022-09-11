@@ -6,22 +6,15 @@ name = "pypi"
 [packages]
 fastapi = {extras = ["all"], version = "*"}
 sqlalchemy = "*"
-imutils = "*"
 pymysql = "*"
 uvicorn = {extras = ["standard"], version = "*"}
 uvloop = "*"
 dictalchemy3 = "==1.0.0"
-boto3 = "*"
 structlog = "*"
 loguru = "*"
 python-dotenv = "*"
-numpy = "*"
-opencv-python = "*"
 sentry-sdk = "*"
-newrelic = "*"
-gunicorn = "*"
 
-Pillow = "*"
 [dev-packages]
 
 [requires]
