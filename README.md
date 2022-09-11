@@ -22,6 +22,7 @@ Although using SQLAlchemy but that is just to create connection, Can implement m
 
 ## TO RUN PROJECT
 
+*Requirement* : Docker
 To run just use command "**bash start.sh**"  on linux need to configure for other OS.
 
 Created Reponse, Logging Common Structure
