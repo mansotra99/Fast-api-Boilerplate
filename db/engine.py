@@ -1,5 +1,5 @@
-from click import echo
-from sqlalchemy import create_engine, databases,MetaData
+import datetime
+from sqlalchemy import create_engine, databases,MetaData,text
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 import os
@@ -58,8 +58,11 @@ class DbExecute(object):
     def fetchall(self,query,valuelist):
         result=db.execute(text(query),valuelist)
         self.del_engine()
-        self.data=result.mappings().all()
+        result=result.mappings().all()
+        self.data=result if result else []
         if len(self.data)>0:
+            for index,row in enumerate(self.data):
+                self.data[index]={column: str(getattr(row, column)) if  isinstance(getattr(row, column), datetime.datetime) else getattr(row, column)   for column in row._keymap.keys()}
             self.status=True
             return self
         else:
@@ -68,8 +71,11 @@ class DbExecute(object):
     def fetchone(self,query,valuelist):
         result=db.execute(text(query),valuelist)
         self.del_engine()
-        self.data=result.mappings().fetchone()
-        if len(self.data)>0:
+        result=result.mappings().fetchone()
+        self.data=result if result else {}
+        if self.data:
+            
+            self.data={column: str(getattr(self.data, column)) if  isinstance(getattr(self.data, column), datetime.datetime) else getattr(self.data, column)   for column in self.data._keymap.keys()}
             self.status=True
             return self
         else:
